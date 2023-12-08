@@ -1,14 +1,16 @@
 const express=require('express')
 const router=express()
 const CatagoryQuestion=require('../models/CatagoryQuestion')
+const imgUpload=require('../multer/multer')
+
 
 // create
 
-router.post("/create",async (req,res)=>{
+router.post("/create",imgUpload,async (req,res)=>{
     try {
         const catquestions=  new CatagoryQuestion({
             questionDesc:req.body.questionDesc,
-            questionImg:req.body.questionImg,
+            questionImg:req.body.photourl,
             catagories:req.body.catagories,
             catagoryMatches:req.body.catagoryMatches,
             catPairs:req.body.catPairs

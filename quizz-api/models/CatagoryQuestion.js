@@ -32,7 +32,8 @@ const CatagoryQuestionSchema=new mongoose.Schema({
         }
     }
 
-    ]
+    ],
+    required:true
 
    }
    

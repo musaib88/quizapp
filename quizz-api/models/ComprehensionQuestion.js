@@ -4,12 +4,19 @@ const ComprehensionQuesSchema= new mongoose.Schema({
     type:String,
     required:true
     },
+    questionUrl:{
+        type:String,
+        required:false
+
+
+    },
     multipleChoiceQuestions:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'MultipleChoice',
-        required:false,}
+        required:true,}
 
     ]  
+   
 })
 
 module.exports=mongoose.model("ComprehensionQuestion",ComprehensionQuesSchema)

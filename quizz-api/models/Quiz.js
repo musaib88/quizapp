@@ -6,6 +6,10 @@ const QuizSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    quizUrl:{
+        type:String,
+        required:true
+    },
     catagoryQuestions:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'CatagoryQuestion',

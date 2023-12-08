@@ -9,6 +9,10 @@ const ClozeSchema=new mongoose.Schema({
         type:Array,
         required:true
 
+      },
+      clozeImg:{
+        type:String,
+        required:false
       }
 
 

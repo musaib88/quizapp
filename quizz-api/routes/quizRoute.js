@@ -1,14 +1,16 @@
 const express=require("express")
 const router=express()
 const Quiz=require('../models/Quiz')
+const imgUpload=require('../multer/multer')
 
 // creeate quiz
-router.post('/create',async (req,res)=>{
+router.post('/create',imgUpload,async (req,res)=>{
     try {
         const quiz=  new Quiz({quizName:req.body.quizName,
             catagoryQuestions:req.body.catagoryQuestions,
             comprehensionQuestions:req.body.comprehensionQuestions,
-            clozeQuestions:req.body.clozeQuestions
+            clozeQuestions:req.body.clozeQuestions,
+            quizUrl:req.body.photourl
 
             
         })
